@@ -1,0 +1,54 @@
+﻿static bool IsValidEmail(string email)
+{
+    var trimmedEmail = email.Trim();
+    if (trimmedEmail.EndsWith("."))
+        return false;
+
+    try
+    {
+        var addr = new System.Net.Mail.MailAddress(email);
+        return addr.Address == trimmedEmail;
+    }
+    catch
+    {
+        return false;
+    }
+}
+==============================
+namespace DefaultEncapsulation;
+public class PersonValidator
+{
+
+    public static string ValidateAndReturnEmail(Person email)
+    {
+        if (IsValidEmail(email))
+        {
+            return email;
+        }
+        else
+        {
+            return "Invalid email address. Please check the format.";
+        }
+
+
+        static bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                if (addr.Address == email)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+    }
+}

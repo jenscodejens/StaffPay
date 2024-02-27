@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.Metrics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DefaultEncapsulation
+{
+    public class Utilities
+    {
+        private string firstName = string.Empty;
+        private string lastName = string.Empty;
+        private string email = string.Empty;
+        private static int idCounter = 0;
+        private int id;
+
+        private static int IncreaseId()
+        {
+            return idCounter += 1;
+        }
+
+        public string FirstName
+        { 
+            get { return firstName; }
+            set 
+            {
+                firstName = value;    
+            } 
+        }
+        public string LastName
+        {
+            get { return lastName; }
+            set
+            {
+                lastName = value;
+            }
+        }
+        public string Email
+        {
+            get { return email; }
+            set
+            {
+                email = value;
+            }
+        }
+        public int Id
+        {
+            get { return id; }
+            private set
+            {
+                id = IncreaseId();
+            }
+        }
+
+        public Utilities(string firstName, string lastName, string email, int id)
+        { 
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Id = id;
+        }
+
+        public void DisplayDetails()
+        {
+            Console.WriteLine($"\nName: \t{FirstName} {LastName}\nEmail: \t{Email}\nId: \t{Id:D2}\n");
+        }
+
+        //public int IdCounter(int idCounter)
+        //{
+        //    idCounter += 1;
+        //    Id = id;
+        //}
+
+    }
+}
