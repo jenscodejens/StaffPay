@@ -1,9 +1,13 @@
-﻿namespace DefaultEncapsulation;
+﻿using System;
+
+namespace DefaultEncapsulation;
 
 public class Person
 {
+    //List<Person> employees = new List<Person>();
+
     private string firstName = string.Empty;
-    private string lastName = string.Empty;
+    private string surname = string.Empty;
     private string email = string.Empty;
     private static int idCounter;
     private int monthlyPay;
@@ -14,9 +18,7 @@ public class Person
         return idCounter += 1;
     }
 
-    //    (!Regex.IsMatch(firstName, @"^[a-zA-Z]+$"))
-
-
+    #region
     public string FirstName
     {
         get { return firstName; }
@@ -25,14 +27,16 @@ public class Person
             firstName = value;
         }
     }
-    public string LastName
+
+    public string Surname
     {
-        get { return lastName; }
+        get { return surname; }
         set
         {
-            lastName = value;
+            surname = value;
         }
     }
+
     public int MonthlyPay
     {
         get { return monthlyPay; }
@@ -58,22 +62,25 @@ public class Person
             id = IncreaseId();
         }
     }
+#endregion
 
-    public Person(string firstName, string lastName, int monthlypay)
-    //public Person(string firstName, string lastName, string email, int id)
+public Person(string firstName, string surname, string email, int monthlyPay, int id)
     {
         FirstName = firstName;
-        LastName = lastName;
-        //Email = email;
-        //Id = id;
+        Surname = surname;
+        Email = email;
         MonthlyPay = monthlyPay;
+        Id = id;
     }
 
     public void DisplayDetails()
     {
-        Console.WriteLine($"\nName: \t{FirstName} {LastName}\nMontly Pay: \t{MonthlyPay}");
-        //Console.WriteLine($"\nName: \t{FirstName} {LastName}\nEmail: \t{Email}\nId: \t{Id}\n");
+        Console.WriteLine($"\nName: \t{FirstName} {Surname}\nEmail: \t{Email}\nMontly pay: \t{MonthlyPay}\nId: \t{Id}\n");
     }
 
+    public void AddPersonToList()  // Vad är rätt call för den skapade person objektet i PersonManagement.CreateNewPerson?
+    {
+        //employees.Add(xxx); 
+    }
 }
 
