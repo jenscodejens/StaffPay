@@ -10,10 +10,7 @@ public class PersonManagement
     public static List<Person> listOfEmployees = new List<Person>();
     public static void CreateNewPerson()
     {
-        //var person = new Person();
-
-
-    PersonValidator.InputFirstName();
+        PersonValidator.InputFirstName();
         PersonValidator.InputSurname();
         PersonValidator.InputEmail();
         PersonValidator.InputPay();
@@ -22,8 +19,6 @@ public class PersonManagement
 
         listOfEmployees.Add(person);
         Console.ReadLine(); 
-
-        // Hur callar jag AddPersonToList i klassen Person?
     }
 
     public static void DisplayDetails() 
@@ -36,8 +31,6 @@ public class PersonManagement
         Console.ReadLine();
     }
 }
-
-
 
 // Metod: Ta bort person
 

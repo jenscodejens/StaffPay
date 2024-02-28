@@ -4,8 +4,6 @@ namespace DefaultEncapsulation;
 
 public class Person
 {
-    //List<Person> employees = new List<Person>();
-
     private string firstName = string.Empty;
     private string surname = string.Empty;
     private string email = string.Empty;
@@ -76,11 +74,6 @@ public Person(string firstName, string surname, string email, int monthlyPay, in
     public void DisplayDetails()
     {
         Console.WriteLine($"\nName: \t{FirstName} {Surname}\nEmail: \t{Email}\nMontly pay: \t{MonthlyPay}\nId: \t{Id}\n");
-    }
-
-    public void AddPersonToList()  // Vad är rätt call för den skapade person objektet i PersonManagement.CreateNewPerson?
-    {
-        //employees.Add(xxx); 
     }
 }
 

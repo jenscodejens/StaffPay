@@ -8,11 +8,6 @@ public class PersonValidator
     public static string inputEmail = String.Empty;
     public static int inputPay = 0;
 
-    //public string FirstName = string.Empty;
-    //public string Surname = string.Empty;
-    //public string Email = string.Empty;
-    //public int MonthlyPay;
-
     public static void InputFirstName()
     {
         Console.Write("Persons first name: ");
