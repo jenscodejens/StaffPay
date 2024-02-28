@@ -1,5 +1,5 @@
-﻿using System.Net.Mail;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+
 namespace DefaultEncapsulation;
 public class PersonValidator
 {
@@ -10,7 +10,7 @@ public class PersonValidator
 
     public static void InputFirstName()
     {
-        Console.Write("Persons first name: ");
+        Console.Write("First name:\t");
 
         do
         {
@@ -22,14 +22,14 @@ public class PersonValidator
                 break;
             }
             ClearPreviousConsoleLine();
-            Console.Write("Persons first name: ");
+            Console.Write("First name:\t");
         }
         while (true);
     }
 
     public static void InputSurname()
     {
-        Console.Write("Persons surname: ");
+        Console.Write("Surname:\t");
 
         do
         {
@@ -41,14 +41,14 @@ public class PersonValidator
                 break;
             }
             ClearPreviousConsoleLine();
-            Console.Write("Persons surname: ");
+            Console.Write("Surname:\t");
         }
-        while (true);       
+        while (true);
     }
 
     public static string InputEmail()
     {
-        Console.Write("Persons email address: ");
+        Console.Write("Email address:\t");
 
         do
         {
@@ -60,14 +60,14 @@ public class PersonValidator
             }
 
             ClearPreviousConsoleLine();
-            Console.Write("Persons email address: ");
+            Console.Write("Email address:\t");
         }
         while (true);
     }
 
     public static void InputPay()
     {
-        Console.Write("Persons monthly pay: ");
+        Console.Write("Monthly pay:\t");
 
         do
         {
@@ -79,7 +79,7 @@ public class PersonValidator
                 break;
             }
             ClearPreviousConsoleLine();
-            Console.Write("Persons monthly pay: ");
+            Console.Write("Monthly pay:\t");
         }
         while (true);
     }

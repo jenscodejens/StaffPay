@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DefaultEncapsulation;
+﻿namespace DefaultEncapsulation;
 
 public class Program
 {
@@ -8,16 +6,18 @@ public class Program
     {
 
         char menuInput = '\0';
+
         while (menuInput != 'q')
         {
-            Console.WriteLine("Employee menu");
-            Console.WriteLine("(1)\tAdd employee");
-            Console.WriteLine("(2)\tDisplay all employee(s)");
-            Console.WriteLine("(q)\tQuit:\n");
-            Console.Write("Make your pick: ");
+            Console.Clear();    
+            Console.WriteLine(("employee menu\n").ToUpper());
+            Console.WriteLine("(1)  Add employee");
+            Console.WriteLine("(2)  Display all employee(s)");
+            Console.WriteLine("(q)  Quit\n");
+            Console.Write("Selection: ");
 
             if (char.TryParse(Console.ReadLine().ToLower(), out menuInput))
-            { 
+            {
                 switch (menuInput)
                 {
                     case '1':
@@ -29,7 +29,7 @@ public class Program
                     case 'q':
                         break;
                     default:
-                        Console.WriteLine("Make a valid menue selection.");
+                        Console.WriteLine(">>Invalid selection<<");
                         break;
                 }
             }

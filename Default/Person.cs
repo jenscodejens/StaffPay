@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DefaultEncapsulation;
+﻿namespace DefaultEncapsulation;
 
 public class Person
 {
@@ -60,20 +58,15 @@ public class Person
             id = IncreaseId();
         }
     }
-#endregion
+    #endregion
 
-public Person(string firstName, string surname, string email, int monthlyPay, int id)
+    public Person(string firstName, string surname, string email, int monthlyPay, int id)
     {
         FirstName = firstName;
         Surname = surname;
         Email = email;
         MonthlyPay = monthlyPay;
         Id = id;
-    }
-
-    public void DisplayDetails()
-    {
-        Console.WriteLine($"\nName: \t{FirstName} {Surname}\nEmail: \t{Email}\nMontly pay: \t{MonthlyPay}\nId: \t{Id}\n");
     }
 }
 

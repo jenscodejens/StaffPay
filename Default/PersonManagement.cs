@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DefaultEncapsulation;
+﻿namespace DefaultEncapsulation;
 public class PersonManagement
 {
     public static List<Person> listOfEmployees = new List<Person>();
     public static void CreateNewPerson()
     {
+        Console.Clear();
+        Console.WriteLine(("add new employee\n").ToUpper());
         PersonValidator.InputFirstName();
         PersonValidator.InputSurname();
         PersonValidator.InputEmail();
@@ -17,17 +13,29 @@ public class PersonManagement
 
         Person person = new Person(PersonValidator.inputFirstName, PersonValidator.inputSurname, PersonValidator.inputEmail, PersonValidator.inputPay, 0);
 
+        Console.WriteLine("\n>>Employee added to the ledger<<");
         listOfEmployees.Add(person);
-        Console.ReadLine(); 
+        Console.ReadLine();
     }
 
-    public static void DisplayDetails() 
+    public static void DisplayDetails()
     {
-        foreach (var person in PersonManagement.listOfEmployees)
-        {
+        Console.Clear();
 
-            Console.WriteLine($"\nName: \t{person.FirstName} {person.Surname}\nEmail: \t{person.Email}\nMontly pay: \t{person.MonthlyPay}\nId: \t{person.Id}\n");
+        Console.WriteLine(("employees in the ledger").ToUpper());
+
+        if (listOfEmployees.Count > 0)
+        {
+            foreach (var person in PersonManagement.listOfEmployees)
+            {
+                Console.WriteLine($"\nName: \t{person.FirstName} {person.Surname}\nEmail: \t{person.Email}\nSalery: {person.MonthlyPay}\nId: \t{person.Id}");
+            }
         }
+        else
+        {
+            Console.WriteLine("No current record");
+        }
+        Console.WriteLine("\n>>End of ledger<<");
         Console.ReadLine();
     }
 }
